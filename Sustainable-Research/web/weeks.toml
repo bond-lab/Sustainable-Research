@@ -1,0 +1,73 @@
+[weeks]
+
+[weeks.intro]
+key = "intro"
+title = "Introduction to Sustainability in Linguistics"
+date = "---"
+other = ""
+
+[weeks.reduce]
+key = "reduce"
+title = "Reduce — Minimizing Duplication in Linguistic Data"
+date = "---"
+other = ""
+
+[weeks.reuse]
+key = "reuse"
+title = "Reuse — Innovation Through Open Data"
+date = "---"
+other = ""
+
+[weeks.recycle]
+key = "recycle"
+title = "Recycle — Repurposing and Enhancing Linguistic Data"
+date = "---"
+other = ""
+
+[weeks.ethics]
+key = "ethics"
+title = "Ethics and Community in Open Data"
+date = "---"
+other = ""
+
+[weeks.fair]
+key = "fair"
+title = "Sustainability Beyond the Data — FAIR Principles and Long-Term Maintenance"
+date = "---"
+other = ""
+
+[weeks.kickoff]
+key = "kickoff"
+title = "Project Kickoff and Team Formation"
+date = "---"
+other = "Workshop session (3h)"
+
+[weeks.collect]
+key = "collect"
+title = "Data Collection and Exploration"
+date = "---"
+other = "Lab session"
+
+[weeks.design]
+key = "design"
+title = "Project Design"
+date = "---"
+other = "Team work + supervision"
+
+[weeks.impl1]
+key = "impl1"
+title = "Implementation Phase I"
+date = "---"
+other = "Team work + supervision"
+
+[weeks.impl2]
+key = "impl2"
+title = "Implementation Phase II"
+date = "---"
+other = "Team work + supervision"
+
+[weeks.present]
+key = "present"
+title = "Presentation and Reflection"
+date = "---"
+other = "Final presentations and feedback"

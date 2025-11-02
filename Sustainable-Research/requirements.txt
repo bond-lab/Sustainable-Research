@@ -1,0 +1,13 @@
+frozen-flask
+appdirs
+black
+click
+Flask
+isort
+itsdangerous
+Jinja2
+MarkupSafe
+pathspec
+regex
+toml
+Werkzeug

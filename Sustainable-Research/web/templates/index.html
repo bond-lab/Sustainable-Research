@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% block title %}Sustainable Open Linguistic Research{% endblock %}
+{% block content %}
+
+<div class="container my-4">
+
+  <header class="course-header mb-4">
+    <h1 class="text-center">Sustainable Open Linguistic Research</h1>
+    <p class="lead">
+      In this course, we explore open data and open science for language knowledge through the lens of sustainability—reducing duplication, reusing existing resources, and recycling legacy data for new audiences and uses. We’ll connect practice to principles such as FAIR and reproducibility, and deliver a team project with public artifacts (data, code, documentation).
+    </p>
+  </header>
+
+  <section class="mb-4">
+    <h3>Course Aim & Learning Outcomes</h3>
+    <ul>
+      <li>Explain the “Reduce–Reuse–Recycle” framing for sustainable linguistic research and relate it to FAIR and reproducibility. </li>
+      <li>Plan and execute an open linguistic data workflow (license selection, documentation, versioning, archiving). </li>
+      <li>Critically evaluate existing datasets and tools for reusability and maintenance costs over time.</li>
+      <li>Produce a small, well-documented open dataset or enhancement to an existing one (e.g., OMW, ELAR materials, legacy dictionaries linked to WordNet) with a sustainability checklist.</li>
+    </ul>
+    <p class="small mb-0">Related ESCO skill example:
+      <a href="http://data.europa.eu/esco/skill/0e78d9c9-7c3c-4c5c-82cb-205c16edbcb8" target="_blank" rel="noopener">
+        Green Computing</a>
+    </p>
+    <p>The course fosters green computing competences by teaching students how to manage linguistic data in environmentally and socially sustainable ways. Through the principles of reduce, reuse, and recycle, students learn to avoid redundant data collection, repurpose existing digital resources, and maintain open datasets for long-term reusability. This approach reduces computational waste, promotes data efficiency, and aligns linguistic research with broader sustainability goals in digital infrastructure.</p>
+
+    <p>By applying green computing principles, students gain practical experience in sustainable digital research workflows. They learn to design and document linguistic resources that are energy-efficient, interoperable, and FAIR-compliant, ensuring long-term value with minimal environmental impact. In professional practice, these skills prepare graduates to contribute to open-science projects, digital archives, and data-driven organisations seeking to reduce their ecological footprint while promoting knowledge accessibility and reusability.</p>
+    
+  </section>
+
+  <section class="mb-4">
+    <h3 class="text-center">Course Table of Contents</h3>
+    <table class="table table-striped table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Week</th>
+          <th scope="col">Date</th>
+          <th scope="col">Topic</th>
+          <th scope="col">Other</th>
+        </tr>
+      </thead>
+      <tbody>
+        {# Provide weeks via TOML -> dict with keys shortnames (e.g., intro/reduce/reuse/...) #}
+        {% for key, week in weeks.items() %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ week.date }}</td>
+          <td><a href="{{ url_for('week', week_key=key) }}">{{ week.title }}</a></td>
+          <td>{{ week.other if week.other else '' }}</td>
+        </tr>
+        {% endfor %}
+
+        {# Example TOML titles to match syllabus:
+           1 Introduction to Sustainability in Linguistics
+           2 Reduce — Minimizing Duplication in Linguistic Data
+           3 Reuse — Innovation Through Open Data
+           4 Recycle — Repurposing and Enhancing Linguistic Data
+           5 Ethics and Community in Open Data
+           6 Sustainability Beyond the Data – FAIR & maintenance
+           7 Project Kickoff and Team Formation
+           8 Data Collection and Exploration
+           9 Project Design
+           10 Implementation I
+           11 Implementation II
+           12 Presentation and Reflection
+        #}
+
+        <tr>
+          <th colspan="2">2025-12-31 <!-- FIXME: confirm due date --></th>
+          <td>Final Assignment Due</td>
+          <td>Submit on Moodle <!-- FIXME: link --> / archive on Zenodo or institutional repo; mirror on GitHub/Wikipedia if relevant.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="mb-4">
+    <h3>Major Assessments</h3>
+    <ul>
+      <li><strong>Participation & Weekly Prep</strong> (reading notes, in-class activities): <strong>20%</strong> <!-- FIXME: weights --></li>
+      <li><strong>Open Data Critique</strong> (Reduce/Reuse/Recycle case study on an existing resource; 1.5–3 pp + checklist): <strong>15%</strong> <!-- FIXME --></li>
+      <li><strong>Team Project</strong>: sustainable open linguistic resource
+        <ul>
+          <li><em>Project proposal</em> (Week 7–9): <strong>10%</strong> <!-- FIXME --></li>
+          <li><em>Implementation & documentation</em> (Weeks 10–11): <strong>30%</strong> <!-- FIXME --></li>
+          <li><em>Public artifact</em> (data + code + README + LICENSE + CITATION.cff + archive DOI): <strong>15%</strong> <!-- FIXME --></li>
+          <li><em>Final presentation</em> (Week 12): <strong>10%</strong> <!-- FIXME --></li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4 class="mt-3">Submission & Openness</h4>
+    <ul>
+      <li>All deliverables must include: clear license (preferably CC BY / CC0 / OSI-approved), provenance, versioning, and a sustainability/maintenance note.</li>
+      <li>Archive final data/code on Zenodo (DOI) or equivalent; mirror on GitHub with a release. <!-- FIXME: confirm repository/organization --></li>
+      <li>Where appropriate, contribute to existing platforms (e.g., OMW, Wikipedia, ELAR cross-links). <!-- FIXME: confirm exact venues --></li>
+    </ul>
+  </section>
+
+  <section class="mb-4">
+    <h3>Readings and Resources</h3>
+
+    <h4>FAIR, Reproducibility & Open Knowledge</h4>
+    <ul>
+      <li>Wilkinson, M. D., et&nbsp;al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. <em>Scientific Data</em>, 3, 160018. <a href="https://www.nature.com/articles/sdata201618">https://www.nature.com/articles/sdata201618</a></li>
+      <li>Berez-Kroeker, A. L., McDonnell, B., Koller, E., Collister, L. B. (eds.). (2022). <em>The Open Handbook of Linguistic Data Management</em>. MIT Press. <a href="https://doi.org/10.7551/mitpress/12200.001.0001">https://doi.org/10.7551/mitpress/12200.001.0001</a></li>
+      <li>Berez-Kroeker, A. L., et&nbsp;al. (2018). Reproducible research in linguistics: Data citation and attribution. <em>Linguistics</em>, 56(1), 1–18. <a href="https://doi.org/10.1515/ling-2017-0032">https://doi.org/10.1515/ling-2017-0032</a></li>
+      <li>Bird, S., &amp; Simons, G. (2003). Seven Dimensions of Portability for Language Documentation and Description. <em>Language</em>, 79(3), 557–582. <a href="https://dx.doi.org/10.1353/lan.2003.0149">https://dx.doi.org/10.1353/lan.2003.0149</a></li>
+      <li>Francesco Bertolotti, Walter Cazzola, Luca Favalli (2023). On the granularity of linguistic reuse. <em>Journal of Systems and Software</em>, 202. <a href="https://doi.org/10.1016/j.jss.2023.111704">https://doi.org/10.1016/j.jss.2023.111704</a></li>
+    </ul>
+
+
+  <section class="mb-4">
+    <h3>Policies & Practicalities</h3>
+    <ul>
+      <li><strong>Attendance:</strong> Regular attendance and active participation are required. <!-- FIXME: local policy --></li>
+      <li><strong>Academic integrity:</strong> Cite all sources; include data/code licenses; document provenance.</li>
+      <li><strong>Accessibility:</strong> Provide alt-text for figures, captions for audio/video where feasible. <!-- FIXME --></li>
+      <li><strong>Tools:</strong> GitHub, Zenodo, Wikidata/Wikipedia, OMW, ELAR (for discovery); Python/Flask/Jupyter; R as needed. <!-- FIXME: confirm toolchain --></li>
+    </ul>
+  </section>
+
+  <section class="mb-4">
+    <h3>Acknowledgements</h3>
+    <ul class="list-unstyled">
+      <li>
+        <img height="20" src="{{ url_for('static', filename='img/recycling-logo.png') }}" alt="Recycling Logo">	<a href="https://commons.wikimedia.org/wiki/File:Recycling_sign_green.png">Siera Wild</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+      </li>
+    </ul>
+  </section>
+
+  <section class="mb-5">
+    <p>Source code for this course is available at
+      <a href="https://github.com/bond-lab/Sustainable-Research">https://github.com/bond-lab/Sustainable-Research</a>
+      under
+      <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+    </p>
+  </section>
+
+</div>
+
+{% endblock %}
